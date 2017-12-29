@@ -9,7 +9,10 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView,
+  FlatList,
+  ToolbarAndroid
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -19,19 +22,32 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+
+
 export default class App extends Component<{}> {
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native! Felixs
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <ScrollView >
+          <Text style={styles.welcome}>
+            Welcome to React Native!Felix
+          </Text>
+          <Text style={styles.instructions}>
+            To get started, edit App.js
+          </Text>
+          <Text style={styles.instructions}>
+            {instructions}
+          </Text>
+        </ScrollView>
+        <FlatList
+          data={[{key: 'a'}, {key: 'b'}]}
+          renderItem={({item}) => <Text>{item.key}</Text>}
+        />
+        <ToolbarAndroid
+        title="AwesomeApp"
+        actions={[{title: 'Settings', show: 'always'}]}
+        />
       </View>
     );
   }
