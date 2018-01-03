@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "react": "16.0.0",
-    "react-native": "0.51.0"
+    "react-native": "0.51.0",
+    "react-native-camera": "^0.12.0",
+    "react-native-gesture-handler": "^1.0.0-alpha.36",
+    "react-native-tab-view": "0.0.73"
   },
   "devDependencies": {
     "babel-jest": "22.0.4",
